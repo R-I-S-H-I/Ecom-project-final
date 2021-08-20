@@ -4,7 +4,7 @@ import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
 import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
 const Header = () =>{
     const [searchVal, setSearchVal] = useState();
-    return(<header>
+    return(<header className='main-header'>
         <ul className='header_icon'>
             <li>
                 <Link to='/favorites'><span><FavoriteRoundedIcon /></span></Link>

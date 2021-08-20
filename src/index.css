@@ -6,6 +6,40 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+.main-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+.header_icon {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+.navbar {
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+}
+.navList {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.navList li {
+  font-size: 1.2rem;
+}
+.linkInNav {
+  text-decoration: none;
+}
 .homePage {
   display: grid;
   grid-template-areas: "filters products";

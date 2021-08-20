@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const Navbar = () =>{
-    return(<nav>
-        <ul>
+    return(<nav className='navbar'>
+        <ul className='navList'>
             <li>
-                <Link to='/'>Home</Link>
+                <Link to='/' className='linkInNav'>Home</Link>
             </li>
             <li>
-                <Link to='/about'>About Us</Link>
+                <Link to='/about' className='linkInNav'>About Us</Link>
             </li>
             <li>
-                <Link to='/contacts'>Contact Us</Link>
+                <Link to='/contacts' className='linkInNav'>Contact Us</Link>
             </li>
         </ul>
     </nav>)
