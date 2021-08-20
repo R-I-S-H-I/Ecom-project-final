@@ -15,12 +15,14 @@ const Home = () =>{
     },[])
     return(
         <HomeContext.Provider value = {filteredProducts_filters}>
+            <div className='homePage'>
             <section>
                 <Filters filterCallback = {filteredProductsCallback}/>
             </section>
             <section>
                 <Products />
             </section>
+            </div>
         </HomeContext.Provider>
     );
 }
@@ -79,24 +81,22 @@ const Filters = ({filterCallback}) =>{
                 return a.prod_price - b.prod_price;
             })
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
             
         }
         else if(sortVal === 'htl'){
             const newFilteredProducts = filteredProducts.sort((a,b)=>{
                 return b.prod_price - a.prod_price;
             })
-            console.log(newFilteredProducts);
             setFilteredProducts(newFilteredProducts); 
         }
         setFilteredProducts(filteredProducts);
     },[sortVal, filteredProducts])
     filterCallback(filteredProducts);
     return(
-        <div>
-            <form>
+        <div className='filters-container'>
+            <form className="filters">
                 <h3>Filters</h3>
-                <fieldset>
+                <fieldset className="sorting">
                     <label htmlFor='sort'>Sort: </label>
                     <select name='sort' id='sort' onChange={(e)=>sortItems(e)}>
                         <option value='none'>None</option>
@@ -104,10 +104,10 @@ const Filters = ({filterCallback}) =>{
                         <option value='htl'>Price: High to Low</option>
                     </select>
                 </fieldset>
-                <div>
+                <div className="filter-options">
                     <fieldset>
                         <legend>Type</legend>
-                        <ul>
+                        <ul className="filter-list">
                             <li>
                                 <input type='radio' name='type' value='all' id='all' onChange={(e) => onChangeType(e)}/>
                                 <label htmlFor='all'>All</label>
@@ -124,7 +124,7 @@ const Filters = ({filterCallback}) =>{
                     </fieldset>
                     <fieldset>
                         <legend>Ratings</legend>
-                        <ul>
+                        <ul className="filter-list">
                             <li>
                                 <input type="radio" name="rating" value="four and above" id="four and above" onChange={(e)=>onChangeRating(e)} />
                                 <label htmlFor='four and above'>4 <StarIcon/>'s and above</label>
@@ -189,25 +189,34 @@ const Products = () =>{
     }
     //addTofavorites function --------------------------------------------------
     return(<ProductsContext.Provider value={{addToCart, cart, favorite}}>
+        <div className='products'>
         <button type="button" onClick={()=>console.log(cart)}>Click to print cart items</button>
         <button type="button" onClick={()=>console.log(favorite)}>Click to print favorites</button>
         <h2>Products</h2>
-        <ul>
+        <ul className='results'>
             {products.map((product)=>{
-                const {id, prod_name, prod_price, rating, type} = product;
-                return(<li key={id}>
-                    <h4>Name: {prod_name}</h4>
+                const {id, prod_name, prod_price, prod_img, rating, type} = product;
+                return(<li key={id} className="result-item">
+                    <div className='prod_img_container'>
+                        <img src={prod_img} alt={prod_name} />
+                    </div>
+                    <div className='result-item-name'>
+                        <h4>Name: {prod_name}</h4>
                     <h5>Price: {prod_price/100}</h5>
-                    {rating==='four and above' && <div>Rating: 4<StarIcon/></div>}
-                    {rating==='three and above' && <div>Rating: 3<StarIcon/></div>}
-                    {rating==='two and above' && <div>Rating: 2<StarIcon/></div>}
-                    {rating==='one and above' && <div>Rating: 1<StarIcon/></div>}
-                    <h4>Type: {type}</h4>
-                    <button type="button" id={`addToCart_btn${id}`}onClick={()=> addToCart(id)}><AddShoppingCartIcon /></button>
-                    <button type="button" id={`favorite_btn${id}`} onClick={()=>addToFavorite(id)}><FavoriteIcon /></button>
+                    </div>
+                    <div className='result-item-desc'>
+                        {rating==='four and above' && <div>Rating: 4<StarIcon/></div>}
+                        {rating==='three and above' && <div>Rating: 3<StarIcon/></div>}
+                        {rating==='two and above' && <div>Rating: 2<StarIcon/></div>}
+                        {rating==='one and above' && <div>Rating: 1<StarIcon/></div>}
+                        <h4>Type: {type}</h4>
+                        <button type="button" id={`addToCart_btn${id}`}onClick={()=> addToCart(id)}><AddShoppingCartIcon /></button>
+                        <button type="button" id={`favorite_btn${id}`} onClick={()=>addToFavorite(id)}><FavoriteIcon /></button>
+                    </div>
                 </li>);
             })}
         </ul>
+        </div>
     </ProductsContext.Provider>);
 }
 

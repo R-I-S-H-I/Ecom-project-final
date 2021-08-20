@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Note there a few "reset" styles given in reset.css. Review those before you begin */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+.homePage {
+  display: grid;
+  grid-template-areas: "filters products";
+  height: 100%;
+  width: auto;
+  padding: 1rem 0.8rem;
+}
+.filters-container {
+  grid-area: filters;
+  background-color: aquamarine;
+}
+.filters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0.5rem 1rem;
+  background-color: aquamarine;
+}
+.filter-list {
+  list-style-type: none;
+}
+.products {
+  grid-area: products;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-color: burlywood;
+}
+.results {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  list-style-type: none;
+}
+.result-item {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.prod_img_container {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.1%;
+}
+.prod_img_container img {
+  height: 100%;
+  width: auto;
+}
