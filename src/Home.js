@@ -1,48 +1,55 @@
-import { useState, useContext, createContext, useEffect } from 'react';
+import { useState, useContext, createContext, useEffect, useCallback } from 'react';
 import StarIcon from '@material-ui/icons/Star';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import data from './data';
 
-const FiltersContext = createContext();
+const HomeContext = createContext();
 const ProductsContext = createContext(); //context for Products component to access addToCart() method, cart array and favourite array.
 
 
 const Home = () =>{
+    const [filteredProducts_filters, setFilteredProducts_filters] = useState(data);
+    const filteredProductsCallback = useCallback((newFilteredItems)=>{
+        setFilteredProducts_filters(newFilteredItems)
+    },[])
     return(
-        <main>
+        <HomeContext.Provider value = {filteredProducts_filters}>
             <section>
-                <Filters />
+                <Filters filterCallback = {filteredProductsCallback}/>
             </section>
             <section>
                 <Products />
             </section>
-        </main>
+        </HomeContext.Provider>
     );
 }
 
-const Filters = () =>{
+const Filters = ({filterCallback}) =>{
     const [typeOfGuitar, setTypeOfGuitar] = useState('all');
     const [rating, setRating] = useState('');
     const [filteredProducts, setFilteredProducts] = useState(data);
+    const [sortVal, setSortVal] = useState('');
+
     const onChangeType = (e) =>{
         setTypeOfGuitar(e.target.value);
     }
     const onChangeRating = (e) =>{
         setRating(e.target.value);
     }
+    const sortItems = (e) =>{
+        setSortVal(e.target.value);
+        console.log(sortVal);
+    }
+
     useEffect(()=>{
         if(typeOfGuitar === 'acoustic'){
             const newFilteredProducts = data.filter((product)=>product.type === 'acoustic');
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
-            console.log(filteredProducts);
         }
         else if(typeOfGuitar === 'electric'){
             const newFilteredProducts = data.filter((product)=>product.type === 'electric');
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
-            console.log(filteredProducts);
         }
         else if(typeOfGuitar === 'all'){
             setFilteredProducts(data);
@@ -52,35 +59,47 @@ const Filters = () =>{
         if(rating === 'four and above'){
             const newFilteredProducts = data.filter((product)=>product.rating === 'four and above');
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
-            console.log(filteredProducts);
         }
         else if(rating === 'three and above'){
             const newFilteredProducts = data.filter((product)=>product.rating === 'three and above');
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
-            console.log(filteredProducts);
         }
         else if(rating === 'two and above'){
             const newFilteredProducts = data.filter((product)=>product.rating === 'two and above');
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
-            console.log(filteredProducts);
         }
         else if(rating === 'one and above'){
             const newFilteredProducts = data.filter((product)=>product.rating === 'one and above');
             setFilteredProducts(newFilteredProducts);
-            console.log(newFilteredProducts);
-            console.log(filteredProducts);
         }
     },[rating])
+    useEffect(()=>{
+        if(sortVal === 'lth'){
+            const newFilteredProducts = filteredProducts.sort((a,b)=>{
+                return a.prod_price - b.prod_price;
+            })
+            setFilteredProducts(newFilteredProducts);
+            console.log(newFilteredProducts);
+            
+        }
+        else if(sortVal === 'htl'){
+            const newFilteredProducts = filteredProducts.sort((a,b)=>{
+                return b.prod_price - a.prod_price;
+            })
+            console.log(newFilteredProducts);
+            setFilteredProducts(newFilteredProducts); 
+        }
+        setFilteredProducts(filteredProducts);
+    },[sortVal, filteredProducts])
+    filterCallback(filteredProducts);
     return(
-        <FiltersContext.Provider value={filteredProducts}>
+        <div>
             <form>
                 <h3>Filters</h3>
                 <fieldset>
                     <label htmlFor='sort'>Sort: </label>
-                    <select name='sort' id='sort'>
+                    <select name='sort' id='sort' onChange={(e)=>sortItems(e)}>
+                        <option value='none'>None</option>
                         <option value='lth'>Price: Low to High</option>
                         <option value='htl'>Price: High to Low</option>
                     </select>
@@ -126,19 +145,17 @@ const Filters = () =>{
                     </fieldset>
                 </div>
             </form>
-        </FiltersContext.Provider>
+        </div>
     );
 }
 
 const Products = () =>{
-    const filteredProducts = useContext(FiltersContext);
-    console.log('filtereProducts');
-    console.log(filteredProducts);
+    const filteredProducts_filters = useContext(HomeContext);
     //state variables ----------------------------------------------------------
-    // const [products, setProducts] = useState(filteredProducts);
-    const [products, setProducts] = useState(filteredProducts);
-    console.log('products');
-    console.log(products);
+    const [products, setProducts] = useState(filteredProducts_filters);
+    useEffect(()=>{
+        setProducts(filteredProducts_filters);
+    },[filteredProducts_filters])
     const [cart, setCart] = useState([]);
     const [favorite, setFavorite] = useState([]);
     //state variables ----------------------------------------------------------
@@ -172,7 +189,8 @@ const Products = () =>{
     }
     //addTofavorites function --------------------------------------------------
     return(<ProductsContext.Provider value={{addToCart, cart, favorite}}>
-        <button type="button" onClick={()=>console.log(cart)}>Click to print cart</button>
+        <button type="button" onClick={()=>console.log(cart)}>Click to print cart items</button>
+        <button type="button" onClick={()=>console.log(favorite)}>Click to print favorites</button>
         <h2>Products</h2>
         <ul>
             {products.map((product)=>{
