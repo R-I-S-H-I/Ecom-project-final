@@ -7,10 +7,10 @@ const Header = () =>{
     return(<header className='main-header'>
         <ul className='header_icon'>
             <li>
-                <Link to='/favorites'><span><FavoriteRoundedIcon /></span></Link>
+                <Link to='/favorites' className="favHeartIcon"><span className='theHeartIcon'><FavoriteRoundedIcon color='secondary' fontSize='large' /></span></Link>
             </li>
             <li>
-                <Link to='/cart'><span><ShoppingCartRoundedIcon /></span></Link>
+                <Link to='/cart'><span><ShoppingCartRoundedIcon color='green' fontSize='large'/></span></Link>
             </li>
         </ul>
         <h1 className='main_heading'>Stringlish</h1>

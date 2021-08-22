@@ -1,4 +1,5 @@
 import { useState, useContext, createContext, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import StarIcon from '@material-ui/icons/Star';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -197,22 +198,24 @@ const Products = () =>{
             {products.map((product)=>{
                 const {id, prod_name, prod_price, prod_img, rating, type} = product;
                 return(<li key={id} className="result-item">
-                    <div className='prod_img_container'>
-                        <img src={prod_img} alt={prod_name} />
-                    </div>
-                    <div className='result-item-name'>
-                        <h4>Name: {prod_name}</h4>
-                    <h5>Price: {prod_price/100}</h5>
-                    </div>
-                    <div className='result-item-desc'>
-                        {rating==='four and above' && <div>Rating: 4<StarIcon/></div>}
-                        {rating==='three and above' && <div>Rating: 3<StarIcon/></div>}
-                        {rating==='two and above' && <div>Rating: 2<StarIcon/></div>}
-                        {rating==='one and above' && <div>Rating: 1<StarIcon/></div>}
-                        <h4>Type: {type}</h4>
-                        <button type="button" id={`addToCart_btn${id}`}onClick={()=> addToCart(id)}><AddShoppingCartIcon /></button>
-                        <button type="button" id={`favorite_btn${id}`} onClick={()=>addToFavorite(id)}><FavoriteIcon /></button>
-                    </div>
+                    <Link to='/product'>
+                        <div className='prod_img_container'>
+                            <img src={prod_img} alt={prod_name} />
+                        </div>
+                        <div className='result-item-name'>
+                            <h4>Name: {prod_name}</h4>
+                        <h5>Price: {prod_price/100}</h5>
+                        </div>
+                        <div className='result-item-desc'>
+                            {rating==='four and above' && <div>Rating: 4<StarIcon/></div>}
+                            {rating==='three and above' && <div>Rating: 3<StarIcon/></div>}
+                            {rating==='two and above' && <div>Rating: 2<StarIcon/></div>}
+                            {rating==='one and above' && <div>Rating: 1<StarIcon/></div>}
+                            <h4>Type: {type}</h4>
+                            <button type="button" id={`addToCart_btn${id}`}onClick={()=> addToCart(id)}><AddShoppingCartIcon /></button>
+                            <button type="button" id={`favorite_btn${id}`} onClick={()=>addToFavorite(id)}><FavoriteIcon /></button>
+                        </div>
+                    </Link>
                 </li>);
             })}
         </ul>
