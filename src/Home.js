@@ -4,24 +4,45 @@ import StarIcon from '@material-ui/icons/Star';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import data from './data';
+import Footer from './Footer';
 
 const HomeContext = createContext();
 const ProductsContext = createContext(); //context for Products component to access addToCart() method, cart array and favourite array.
 
 
-const Home = () =>{
+const Home = ({cartItemsFromHomeCallBack, favouriteItemsFromHomeCallBack, currentProductCallBack}) =>{
     const [filteredProducts_filters, setFilteredProducts_filters] = useState(data);
+    const [allCartItems, setCartItems] = useState([]);
+    const [allFavouriteItems, setFavoriteItems] = useState([]);
+    const [theCurrentProduct, setTheCurrentProduct] = useState([]);
+
+    const cartItemsCallback = useCallback((cartItemsFromProducts)=>{
+        setCartItems(cartItemsFromProducts);
+    },[allCartItems])
+
+    const favouritesCallback = useCallback((favouriteItemsFromProducts)=>{
+        setFavoriteItems(favouriteItemsFromProducts);
+    },[allFavouriteItems])
+
     const filteredProductsCallback = useCallback((newFilteredItems)=>{
         setFilteredProducts_filters(newFilteredItems)
     },[])
+
+    const currentProductCallBackFromHome = useCallback((newCurrent)=>{
+        setTheCurrentProduct(newCurrent);
+    },[theCurrentProduct])
+    cartItemsFromHomeCallBack(allCartItems);
+    favouriteItemsFromHomeCallBack(allFavouriteItems)
+    currentProductCallBack(theCurrentProduct)
+
     return(
-        <HomeContext.Provider value = {filteredProducts_filters}>
+        <HomeContext.Provider value = {{filteredProducts_filters, allCartItems, theCurrentProduct}}>
             <div className='homePage'>
             <section>
                 <Filters filterCallback = {filteredProductsCallback}/>
             </section>
             <section>
-                <Products />
+                <Products cartItemsCallback = {cartItemsCallback} favouriteItemsCallback = {favouritesCallback} currentProductCallBackFromHome={currentProductCallBackFromHome}/>
             </section>
             </div>
         </HomeContext.Provider>
@@ -150,8 +171,9 @@ const Filters = ({filterCallback}) =>{
     );
 }
 
-const Products = () =>{
-    const filteredProducts_filters = useContext(HomeContext);
+const Products = ({cartItemsCallback, favouriteItemsCallback, currentProductCallBackFromHome}) =>{
+    const {filteredProducts_filters} = useContext(HomeContext);
+    const {allCartItems} = useContext(HomeContext);
     //state variables ----------------------------------------------------------
     const [products, setProducts] = useState(filteredProducts_filters);
     useEffect(()=>{
@@ -159,6 +181,7 @@ const Products = () =>{
     },[filteredProducts_filters])
     const [cart, setCart] = useState([]);
     const [favorite, setFavorite] = useState([]);
+    const [currentProductInProducts, setCurrentProductInProducts] = useState([]);
     //state variables ----------------------------------------------------------
     //--------------------------------------------------------------------------
     //addToCart function -------------------------------------------------------
@@ -189,6 +212,20 @@ const Products = () =>{
         }
     }
     //addTofavorites function --------------------------------------------------
+    // Changing the current item -----------------------------------------------
+    const changeTheCurrentItem = (id) =>{
+        const newCur = products.filter((product)=> product.id === id)[0];
+        setCurrentProductInProducts(newCur);
+        console.log(currentProductInProducts);
+    }
+
+    useEffect(()=>{
+        cartItemsCallback(cart);
+    },[cart])
+
+    useEffect(()=>{
+        favouriteItemsCallback(favorite);
+    },[favorite])
     return(<ProductsContext.Provider value={{addToCart, cart, favorite}}>
         <div className='products'>
         <button type="button" onClick={()=>console.log(cart)}>Click to print cart items</button>
@@ -198,7 +235,7 @@ const Products = () =>{
             {products.map((product)=>{
                 const {id, prod_name, prod_price, prod_img, rating, type} = product;
                 return(<li key={id} className="result-item">
-                    <Link to='/product'>
+                    <Link to={`/product/${id}`} id={id} > {/*onClick={()=>changeTheCurrentItem(id)*/}
                         <div className='prod_img_container'>
                             <img src={prod_img} alt={prod_name} />
                         </div>
@@ -206,6 +243,7 @@ const Products = () =>{
                             <h4>Name: {prod_name}</h4>
                         <h5>Price: {prod_price/100}</h5>
                         </div>
+                    </Link>
                         <div className='result-item-desc'>
                             {rating==='four and above' && <div>Rating: 4<StarIcon/></div>}
                             {rating==='three and above' && <div>Rating: 3<StarIcon/></div>}
@@ -215,11 +253,11 @@ const Products = () =>{
                             <button type="button" id={`addToCart_btn${id}`}onClick={()=> addToCart(id)}><AddShoppingCartIcon /></button>
                             <button type="button" id={`favorite_btn${id}`} onClick={()=>addToFavorite(id)}><FavoriteIcon /></button>
                         </div>
-                    </Link>
                 </li>);
             })}
         </ul>
         </div>
+        <Footer />
     </ProductsContext.Provider>);
 }
 
