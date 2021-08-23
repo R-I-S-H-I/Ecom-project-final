@@ -7,7 +7,8 @@ const data = [
         prod_price: 10000,
         prod_img: acouticGuitar,
         rating: 'four and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const data = [
         prod_price: 15000,
         prod_img: acouticGuitar,
         rating: 'three and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 3,
@@ -23,7 +25,8 @@ const data = [
         prod_price: 20000,
         prod_img: electricGuitar,
         rating: 'two and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 4,
@@ -31,7 +34,8 @@ const data = [
         prod_price: 25000,
         prod_img: electricGuitar,
         rating: 'one and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 5,
@@ -39,7 +43,8 @@ const data = [
         prod_price: 30000,
         prod_img: acouticGuitar,
         rating: 'four and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 6,
@@ -47,7 +52,8 @@ const data = [
         prod_price: 35000,
         prod_img: acouticGuitar,
         rating: 'three and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 7,
@@ -55,7 +61,8 @@ const data = [
         prod_price: 40000,
         prod_img: electricGuitar,
         rating: 'two and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 8,
@@ -63,7 +70,8 @@ const data = [
         prod_price: 45000,
         prod_img: electricGuitar,
         rating: 'one and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 9,
@@ -71,7 +79,8 @@ const data = [
         prod_price: 50000,
         prod_img: acouticGuitar,
         rating: 'four and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 10,
@@ -79,7 +88,8 @@ const data = [
         prod_price: 55000,
         prod_img: acouticGuitar,
         rating: 'three and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 11,
@@ -87,7 +97,8 @@ const data = [
         prod_price: 12500,
         prod_img: electricGuitar,
         rating: 'two and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 12,
@@ -95,7 +106,8 @@ const data = [
         prod_price: 22500,
         prod_img: electricGuitar,
         rating: 'one and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 13,
@@ -103,7 +115,8 @@ const data = [
         prod_price: 32500,
         prod_img: acouticGuitar,
         rating: 'four and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 14,
@@ -111,7 +124,8 @@ const data = [
         prod_price: 42500,
         prod_img: acouticGuitar,
         rating: 'three and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 15,
@@ -119,7 +133,8 @@ const data = [
         prod_price: 52500,
         prod_img: electricGuitar,
         rating: 'two and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 16,
@@ -127,7 +142,8 @@ const data = [
         prod_price: 17500,
         prod_img: electricGuitar,
         rating: 'one and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 17,
@@ -135,7 +151,8 @@ const data = [
         prod_price: 27500,
         prod_img: acouticGuitar,
         rating: 'four and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 18,
@@ -143,7 +160,8 @@ const data = [
         prod_price: 37500,
         prod_img: acouticGuitar,
         rating: 'three and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 19,
@@ -151,7 +169,8 @@ const data = [
         prod_price: 47500,
         prod_img: electricGuitar,
         rating: 'two and above',
-        type: 'electric'
+        type: 'electric',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     },
     {
         id: 20,
@@ -159,7 +178,8 @@ const data = [
         prod_price: 57500,
         prod_img: acouticGuitar,
         rating: 'one and above',
-        type: 'acoustic'
+        type: 'acoustic',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget massa tristique, luctus dui non, interdum velit. Nunc et gravida eros. Nam non placerat risus, nec consequat justo. Morbi odio sapien, venenatis quis purus eu, ultrices tincidunt metus. Donec vehicula tortor nec tortor tempus convallis. Integer venenatis elementum arcu, sit amet rhoncus mauris tempus non. Vivamus sed purus in arcu vestibulum venenatis et ac nibh. Donec accumsan, mauris non gravida pellentesque, arcu ante facilisis nunc, commodo ultrices sem erat at tortor. Cras risus velit, pulvinar a dolor ut, malesuada efficitur libero. Sed malesuada id urna dignissim ultricies. Nullam ac urna risus.'
     }
 ]
 

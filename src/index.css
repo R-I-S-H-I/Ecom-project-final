@@ -122,7 +122,8 @@ fieldset {
   justify-items: center;
   background-color: rgb(31, 31, 31, 0.85);
 }
-.products-heading {
+.products-heading,
+.cart-items-heading {
   font-size: 2.5rem;
   color: #fcff48;
 }
@@ -141,6 +142,13 @@ fieldset {
   margin: 1rem 0;
   padding: 0 0.5rem;
 }
+.theProduct {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: 0 12.5%;
+  color: #fcff48;
+}
 .overRide-underLine {
   text-decoration: none;
   color: inherit;
@@ -158,6 +166,24 @@ fieldset {
   height: 100%;
   width: auto;
   border-radius: 2rem;
+}
+.cart,
+.favorites {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 25%;
+  color: #fcff48;
+}
+.cart-list,
+.favourites-list {
+  list-style-type: none;
+}
+.item-in-cart,
+.favourites-list-item {
+  background-color: #fff9aa33;
+  padding: 1rem;
+  margin: 2rem;
 }
 .footer {
   display: flex;

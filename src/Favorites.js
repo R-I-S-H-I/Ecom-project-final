@@ -1,11 +1,11 @@
 const Favorites = ({props}) => {
     return(
-        <div>
+        <div className='favorites'>
             <h1>Favourite items</h1>
-            {props && <h1>No Favourites</h1>}
-            <ul>
+            {props.length===0 && <h1>No Favourite Items</h1>}
+            <ul className='favourites-list'>
                 {props.map((product)=>{
-                    return(<li>
+                    return(<li className='favourites-list-item'>
                         <div className='prod_img_container'>
                             <img src={product.prod_img} alt={product.prod_name} />
                         </div>
