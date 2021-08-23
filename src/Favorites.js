@@ -1,13 +1,18 @@
 const Favorites = ({props}) => {
     return(
         <div>
-            <h1>cart items</h1>
-            {/* {props.map((prop)=>console.log(prop[0].id, prop.qty))}; */}
+            <h1>Favourite items</h1>
+            {props && <h1>No Favourites</h1>}
             <ul>
                 {props.map((product)=>{
                     return(<li>
-                        <h2>{product.prod_name}</h2>
-                        <h3>{product.prod_price/100}</h3>
+                        <div className='prod_img_container'>
+                            <img src={product.prod_img} alt={product.prod_name} />
+                        </div>
+                        <div className='result-item-name'>
+                            <h4>Name: {product.prod_name}</h4>
+                        <h5>Price: {product.prod_price/100}</h5>
+                        </div>
                     </li>)
                 })}
             </ul>

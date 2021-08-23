@@ -230,18 +230,18 @@ const Products = ({cartItemsCallback, favouriteItemsCallback, currentProductCall
         <div className='products'>
         <button type="button" onClick={()=>console.log(cart)}>Click to print cart items</button>
         <button type="button" onClick={()=>console.log(favorite)}>Click to print favorites</button>
-        <h2>Products</h2>
+        <h2 className='products-heading'>Products</h2>
         <ul className='results'>
             {products.map((product)=>{
                 const {id, prod_name, prod_price, prod_img, rating, type} = product;
                 return(<li key={id} className="result-item">
-                    <Link to={`/product/${id}`} id={id} > {/*onClick={()=>changeTheCurrentItem(id)*/}
+                    <Link to={`/product/${id}`} id={id} className='overRide-underLine'>
                         <div className='prod_img_container'>
                             <img src={prod_img} alt={prod_name} />
                         </div>
                         <div className='result-item-name'>
                             <h4>Name: {prod_name}</h4>
-                        <h5>Price: {prod_price/100}</h5>
+                            <h5>Price: CAD {prod_price/100}</h5>
                         </div>
                     </Link>
                         <div className='result-item-desc'>
